@@ -67,7 +67,7 @@ export default function AddTaskDialog({ open, onOpenChange, companyId }: AddTask
 
       console.log('Creating task with data:', { taskData, companyId })
 
-      const result = await createTask(companyId, taskData)    
+      const result = await createTask(companyId, taskData)   
       
       if (result) {
         toast.success("Task created successfully")

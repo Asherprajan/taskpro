@@ -24,7 +24,13 @@ export const createCompany = async (name: string) => {
   return response.json();
 };
 
-export const createTask = async (companyId: string, task: Omit<Task, 'id' | 'companyId' | 'createdAt'>) => {
+export const createTask = async (companyId: string, task: {
+  title: string;
+  description: string;
+  status: string;
+  priority: string;
+  dueDate?: Date;
+}) => {
   console.log('Creating task with data:', { companyId, task }); // Debug log
 
   try {
